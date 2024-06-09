@@ -1,0 +1,37 @@
+$elem-dark: #2d2d2d;
+$elem-lightblue: #38c0eb;
+$elem-blue: #3670c7;
+$elem-blue-lighten: #5d92e0;
+$elem-darkblue: #3b65a5;
+$elem-red: #f91155;
+$elem-white: #fff;
+$elem-dark-white: #efefef;
+$elem-yellow: #ffbd13;
+$elem-lightgrey: #8f8f8f;
+$elem-darkgrey: #525252;
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == desktop {
+    @media (max-width: 1600px) {
+      @content;
+    }
+  } @else if $breakpoint == laptop {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == prePhone {
+    @media (max-width: 600px) {
+      @content;
+    }
+  } @else if $breakpoint == phone {
+    @media (max-width: 480px) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$breakpoint}.";
+  }
+}
